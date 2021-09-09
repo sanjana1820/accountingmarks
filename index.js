@@ -12,10 +12,14 @@ function resultFunc() {
 
 	var query = "MS21A058";
 
+	if (rollNo == null) {
+		document.getElementById("result").innerHTML = "Invalid value entered"
+	}
+
 	if (data.hasOwnProperty(rollNo)) {
 		document.getElementById("result").innerHTML = "Your Marks:" + data[rollNo]
 		console.log(data[rollNo])
+	} else {
+		document.getElementById("result").innerHTML = "Invalid value entered"
 	}
 }
-
-
