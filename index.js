@@ -1,25 +1,22 @@
 function resultFunc() {
 	var rollNo = document.getElementById("rollNo").value;
-	console.log(rollNo)
 
 	var data = {
-		"MS21A058": "25",
-		"MS21A051": "17.5",
-		"MS21A021": "21.5",
-		"MS21A033": "20",
-		"MS21A029": "8.5",
+		"ms21a058": "25",
+		"ms21a051": "17.5",
+		"ms21a021": "21.5",
+		"ms21a033": "20",
+		"ms21a029": "8.5",
 	}
-
-	var query = "MS21A058";
 
 	if (rollNo == null) {
 		document.getElementById("result").innerHTML = "Invalid value entered"
 	}
 
-	if (data.hasOwnProperty(rollNo)) {
-		document.getElementById("result").innerHTML = "Your Marks:" + data[rollNo]
-		console.log(data[rollNo])
-	} else {
+	if (data.hasOwnProperty(rollNo.toLowerCase())) {
+		document.getElementById("result").innerHTML = "Your Marks:" + data[rollNo.toLowerCase()]
+	} 
+	else {
 		document.getElementById("result").innerHTML = "Invalid value entered"
 	}
 }
